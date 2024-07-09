@@ -90,15 +90,17 @@
     <title>Aluno</title>
 </head>
 <body>
-<!--Buscas-->
-{% include 'matricula_test.html' %}
+
+  
+          
+        
       
          <h2 style="text-align:center;width:100%">Registros</h2>     
        
         
        
                     
-              <table class="table table-striped table-hover col-md-12 table-dark table-bordered">
+              <table class="table table-striped table-hover col-md-11 table-dark table-bordered">
                 <thead>
                   <tr>
                     <th scope="col">Matricula</th>
@@ -115,27 +117,25 @@
                 </thead>                        
                 <tbody>
               
-                {%if regs%}
-                {%for reg in regs %}
+               
                 <tr>
-                <td><a href="{% url 'test' reg.matricula%}">{{ reg.matricula }}</a></td>
+                <td><a href="{% url 'test' matricula%}">{{ registro.matricula }}</a></td>
 
                 
                 
-                <td>{{ reg.nome }}</td>
-                <td>{{ reg.email }}</td>
-                <td>{{ reg.genero }}</td>
-                <td>{{ reg.estado }}</td>
-                <td>{{ reg.nascido }}<br></td>
-                <td>{{ reg.contato }}<br></td>
-                <td>{{ reg.cidade }}<br></td>
-                <td>{{ reg.estado }}<br></td>
-                <td>{{ reg.criado_em}}<br></td>
+                <td>{{ registro.nome }}</td>
+                <td>{{ registro.email }}</td>
+                <td>{{ registro.genero }}</td>
+                <td>{{ registro.estado }}</td>
+                <td>{{ registro.nascido }}<br></td>
+                <td>{{ registro.contato }}<br></td>
+                <td>{{ registro.cidade }}<br></td>
+                <td>{{ registro.estado }}<br></td>
+                <td>{{ registro.criado_em}}<br></td>
               </tr>
               <br>
 
-                {% endfor %}
-                {% endif %}
+               
               </tbody>
 
             </table>

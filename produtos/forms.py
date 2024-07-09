@@ -1,7 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
-from .models import Gravar, boletim
+from .models import Gravar, boletim, boletim2b,Boletimb
 from produtos import models
 
 class SignUpForm(UserCreationForm):
@@ -69,3 +69,28 @@ class AddRecordNotas(forms.ModelForm):
 	class Meta:
 		model = boletim
 		exclude = (""),
+  
+class Notas2b(forms.ModelForm):
+	
+	matematica1b = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Matematica", "class":"form-control"}), label="")
+	portugues1b = forms.CharField(required=True, widget=forms.widgets.TextInput(attrs={"placeholder":"Português", "class":"form-control"}), label="")
+	
+
+	class Meta:
+		model = boletim2b
+		exclude = (""),
+  
+class BoletimForm(forms.ModelForm):
+    class Meta:
+        model = Boletimb
+        fields = [
+            'aluno', 'matricula', 
+            'ciencias_bim1', 'ciencias_bim2', 'ciencias_bim3', 'ciencias_bim4',
+            'matematica_bim1', 'matematica_bim2', 'matematica_bim3', 'matematica_bim4',
+            'geografia_bim1', 'geografia_bim2', 'geografia_bim3', 'geografia_bim4',
+            'historia_bim1', 'historia_bim2', 'historia_bim3', 'historia_bim4',
+            'portugues_bim1', 'portugues_bim2', 'portugues_bim3', 'portugues_bim4',
+            'ingles_bim1', 'ingles_bim2', 'ingles_bim3', 'ingles_bim4',
+            'fisica_bim1', 'fisica_bim2', 'fisica_bim3', 'fisica_bim4',
+            'quimica_bim1', 'quimica_bim2', 'quimica_bim3', 'quimica_bim4'
+        ]  

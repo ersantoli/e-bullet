@@ -19,7 +19,7 @@
                 <a class="nav-link active" href="{%url 'aluno'%}">Alunos Cadastrados</a>
               </li>              
               <li class="nav-item">
-                <a class="nav-link active" href="{%url 'add_notas'%}">Notas</a>
+                <a class="nav-link active" href="{% url 'boletim_create'%}">Notas</a>
               </li>
              
               <li class="nav-item">
@@ -30,6 +30,8 @@
                <li class="nav-item">
                 <a class="nav-link active" href="{% url 'boletim_view'%}">boletim</a>
                </li> 
+               
+             
              
               {% else %}
              

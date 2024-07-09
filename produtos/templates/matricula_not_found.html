@@ -19,8 +19,7 @@
 </div>
 {% block content %}
 {% if user.is_authenticated %}
-<a href="{%url 'boletim_create'%}" class="btn btn-primary">Cadastrar Notas</a>
-{%else%}
+
 <a href="{%url 'index'%}" class="btn btn-info">Back</a>
 {% endif %}
 
